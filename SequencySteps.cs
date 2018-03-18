@@ -9,16 +9,18 @@ namespace BeautifulArrays
     class SequencySteps
     {
         //Console.WriteLine("enter number of test cases");
-        private int testCases = Convert.ToInt32(Console.ReadLine());
+        private int testCases; 
         private int seqSize;
         private List<int> testSeq;
-        private int[] res = new int[5];
+        private int[] res = new int[4];
         private int sum;
         private int counta;
 
         public void CheckSequency()
         {
-            for (int t = 0; t <= testCases; t++)
+            testCases = Convert.ToInt32(Console.ReadLine());
+
+            for (int t = 0; t < testCases; t++)
             {
                 //Console.WriteLine("enter the sequence size");
                 seqSize = Convert.ToInt32(Console.ReadLine());
@@ -31,6 +33,11 @@ namespace BeautifulArrays
                     .ToList();
 
                 sum = testSeq.Sum();
+
+                for (int i = 1; i < 4; i++)
+                {
+                    res[i] = testSeq.FindAll(x => x % 4 == i).Count();
+                }
 
                 counta = 0;
 
