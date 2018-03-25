@@ -15,6 +15,7 @@ namespace BeautifulArrays
         private int[] res = new int[4];
         private int sum;
         private int counta;
+        //private int[] triangle;
 
         public void CheckSequency()
         {
